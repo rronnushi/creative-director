@@ -2,107 +2,124 @@
 
 **Your AI coding agent can build it. Make sure it's worth building.**
 
-Creative direction for Codex, Claude Code and compatible coding agents.
+A creative direction skill for [Codex](https://openai.com/codex/), [Claude Code](https://www.anthropic.com/claude-code), and other compatible coding agents.
 
-Creative Director helps turn ideas into distinctive digital experiences and improves existing applications through stronger design decisions, clearer interactions and thoughtful implementation. It adds structured judgment to your coding agent: what to build, what to preserve, what to simplify and how to know whether a change helped.
+## Why I made this
 
-## What it does
+I've been using coding agents to build websites, small apps, games, and generative art. They're great at getting things working. But I've often found myself going back and forth over the same things: a layout that feels generic, unnecessary features, inconsistent interactions, or a redesign that breaks something that was already good.
 
-Use it when a functional app still feels generic, when an idea needs direction, or when a redesign threatens to discard what already works. It supports websites, editorial interfaces, dashboards, browser games and generative art. Designers, developers and people building their first product can use it without adopting one visual style.
+The code isn't always the problem. Sometimes the project just needs better direction.
 
-Six inferred modes cover direction, critique, refinement, discovery, design specifications and implementation. Critique is read-only unless you also request changes. Refinement starts with the existing project and preserves working behavior, data and identity. Specialist resources load only when relevant.
+I made Creative Director to bring more design thinking into that process. It helps an agent question an idea, explore different approaches, spot what's not working, and make more considered changes instead of simply generating more code.
 
-The default taste is **minimal foundations, expressive experiences**: clear structure with purposeful character. Maximalism, dense professional interfaces and experimental art remain valid. Your direction and project conventions override the defaults.
+It's not a design system or a preset visual style. It's a way to get a more useful creative partner out of the coding agent you're already using.
 
-## Example requests
+## What can you use it for?
 
-- “Use Creative Director to critique this app. Give prioritized remedies; don't edit.”
-- “Keep our visual identity and fix this mobile gallery toolbar.”
-- “Give this archive two distinct creative directions; don't implement yet.”
-- “Translate this screenshot into layout, type and interaction rules. Mark assumptions.”
-- “Improve the structural variety of this seeded artwork while preserving exports.”
-- “Which features should this MVP omit?”
+- **Starting something new.** Work through an idea, explore directions, and decide what's worth building before writing code.
+- **Reviewing an existing app.** Get a critique of its layout, typography, interactions, usability, and overall coherence.
+- **Improving a design.** Fix what feels off without throwing away the parts that already work.
+- **Making better product decisions.** Figure out what to prioritize, simplify, or leave out.
+- **Creative coding.** Think through composition, variation, palettes, rendering, and the relationship between what you see on screen and what you export.
+- **Turning references into implementation.** Use a screenshot or a visual direction to establish practical rules for layout, type, and behavior.
 
-Pure backend debugging, factual questions and small text edits should not activate the skill.
+It works across websites, editorial interfaces, dashboards, browser games, and generative art projects. You don't have to like the same things I do for it to be useful.
 
-## Before and after workflows
+## How I use it
 
-These are illustrative, not measured results:
+You can mention Creative Director in a request, or invoke it directly. For example:
 
-| Before | Skill-guided outcome | Example |
+> Critique this app. Tell me what feels inconsistent and what you'd fix first. Don't change the code yet.
+
+> I like the existing visual identity. Improve the mobile layout without redesigning everything.
+
+> Give me two different directions for this portfolio before we start building.
+
+> This procedural artwork has lots of colour variation, but the compositions all look the same. Help me fix that.
+
+> What should I remove from this MVP?
+
+You can also ask it to translate a reference image into layout and interaction rules, or to help implement an agreed direction.
+
+Under the hood, the skill has six workflows: creative direction, critique, refinement, discovery, design specifications, and implementation. You don't need to select one every time; the agent can choose based on what you're asking. A critique shouldn't edit your project unless you've asked for changes.
+
+## A few examples
+
+These are written examples of how the skill approaches a problem, not measured before-and-after results.
+
+| If you're dealing with... | Creative Director can help you... | Example |
 | --- | --- | --- |
-| “Make it modern” | A concept expressed through hierarchy, type roles and interactions | [Landing page](examples/landing-page.md) |
-| Vague UI feedback | Located evidence, impact, remedy, effort and verification | [App critique](examples/app-critique.md) |
-| A redesign replacing everything | Small changes preserving functioning behavior and identity | [Website refinement](examples/website-redesign.md) |
-| Preview/export mismatch | One scene state across renderers | [App refinement](examples/app-refinement.md) |
-| Random colours on identical compositions | Authored composition grammars and a reproducible review set | [Procedural art](examples/procedural-art.md) |
+| A vague request to “make it modern” | Define a clearer visual direction | [Landing page](creative-director/examples/landing-page.md) |
+| A UI that doesn't quite work | Identify specific issues and prioritize fixes | [App critique](creative-director/examples/app-critique.md) |
+| A redesign that's getting out of hand | Improve the existing site without replacing everything | [Website refinement](creative-director/examples/website-redesign.md) |
+| An app whose preview and export don't match | Bring both outputs back to the same underlying state | [App refinement](creative-director/examples/app-refinement.md) |
+| Generative artwork that looks too repetitive | Build more variety into the compositions, not just the colours | [Procedural art](creative-director/examples/procedural-art.md) |
 
-Also see [renderer selection](examples/creative-coding.md) and [product exploration](examples/product-ideation.md).
+There are also examples for [creative coding](creative-director/examples/creative-coding.md) and [product exploration](creative-director/examples/product-ideation.md).
 
-## Installation
+## Install
 
-The repository contains **one canonical installable folder**, `creative-director/`. Copy that whole folder, not just SKILL.md, into the chosen host's location. If you downloaded the release ZIP, its top-level `creative-director/` is the folder to install. Avoid installing competing versions under the same host.
+Download or clone the repository, then copy the **entire `creative-director/` folder** into your agent's skills directory. Don't copy `SKILL.md` on its own; the skill uses the supporting files too.
 
-| Agent | User scope | Project scope | Explicit invocation |
+| Agent | Install for yourself | Install for one project | Invoke |
 | --- | --- | --- | --- |
 | Codex | `~/.agents/skills/creative-director/` | `<project>/.agents/skills/creative-director/` | `$creative-director` |
 | Claude Code | `~/.claude/skills/creative-director/` | `<project>/.claude/skills/creative-director/` | `/creative-director` |
 
-Both hosts can discover it from natural-language requests. Check that the host lists the skill; restart if changes are not picked up. Claude Code's paths here describe local sessions; cloud and other Claude products may have different discovery. Other Agent Skills hosts need their own documented installation location and supporting-resource access.
+**macOS / Linux — Codex, personal install**
 
-PowerShell example, run from the repository root, for **one** selected scope/host:
+Run this from the repository root:
 
-```powershell
-# Codex, user scope:
-$skillTarget = Join-Path $HOME '.agents/skills'
-New-Item -ItemType Directory -Force -Path $skillTarget | Out-Null
-Copy-Item -LiteralPath './creative-director' -Destination $skillTarget -Recurse
-# For a project, use '<project>/.agents/skills' instead.
-# For Claude Code, use '~/.claude/skills' or '<project>/.claude/skills'.
-```
-
-POSIX equivalent for Codex user scope:
-
-```sh
+```bash
 mkdir -p ~/.agents/skills
 cp -R creative-director ~/.agents/skills/
 ```
 
-Inspect an existing destination before updating so personal modifications are not overwritten. Keep personal profiles outside the installed folder. Automatic selection is host-dependent; installation-format validation is not proof of routing or execution quality.
+**Windows PowerShell — Codex, personal install**
 
-Instructions were checked on **2026-10-24** against the [Agent Skills specification](https://agentskills.io/specification), [Codex guide](https://learn.chatgpt.com/docs/build-skills) and [Claude Code guide](https://code.claude.com/docs/en/skills). Actual paired host evaluations remain pending.
+```powershell
+$skillTarget = Join-Path $HOME '.agents/skills'
+New-Item -ItemType Directory -Force -Path $skillTarget | Out-Null
+Copy-Item -LiteralPath './creative-director' -Destination $skillTarget -Recurse
+```
 
-## How judgment and knowledge work
+For Claude Code, use `~/.claude/skills` as the destination instead. For a project-only install, use the project paths in the table.
 
-The small [SKILL.md](SKILL.md) selects a workflow and routes to relevant references. Technical guidance is distinct from [overridable taste](taste/README.md). The [source register](knowledge/sources.json) records primary URLs, review dates, version context, supported claims and limitations. One Three.js source is explicitly partial because only the manual shell could be retrieved; verify installed-version APIs before use.
+If you already have an installation, check the destination before copying over it. Your agent may need a restart to pick up the new skill. Discovery and automatic activation depend on the host; the paths above are for local Codex and Claude Code sessions.
 
-[Structured comparisons](knowledge/comparisons.json) are synthetic examples. Add your own through the schema-validated CLI. [Personal configuration and case studies](knowledge/README.md) stay private unless deliberately approved for public use. Feedback produces candidate lessons; a separate human approval attestation is required before promotion. No script rewrites the canonical skill automatically.
+The installation guidance was checked on October 24, 2026 against the [Agent Skills specification](https://agentskills.io/specification), [Codex documentation](https://learn.chatgpt.com/docs/build-skills), and [Claude Code documentation](https://code.claude.com/docs/en/skills). End-to-end comparisons across the two hosts are still pending.
 
-This checkout's real project evidence is limited to a private documentation observation from one accessible local project and explicit instructions from this build session. It is not part of the release ZIP. No private screenshots, code, history or assets are bundled. Public examples are authored illustrations; technical references cite primary documentation. No user-study outcomes are claimed.
+## What about taste?
 
-## Structure
+I have my own preferences: clear layouts, restrained interfaces, good typography, and room for more expressive work when the project calls for it. That's the starting point, not a rule everyone has to follow.
+
+Creative Director separates [design preferences](creative-director/taste/README.md) from [technical references](creative-director/references/) so you can change the former without losing the latter. If your project calls for something maximalist, playful, dense, or deliberately unconventional, that should take priority.
+
+I also wanted it to be useful beyond giving opinions. The skill includes references, checklists, and examples to help an agent explain *why* it's suggesting a change and what to check after implementing it.
+
+You can explore the [source register](creative-director/knowledge/sources.json), [example comparisons](creative-director/knowledge/comparisons.json), and [guidance for private project knowledge](creative-director/knowledge/README.md). The comparisons are authored examples, not proof of improved outcomes. New lessons require human approval; the skill doesn't rewrite itself automatically.
+
+## What's in the repository?
 
 ```text
 creative-director/
-  SKILL.md              Activation, routing and core constraints
-  agents/openai.yaml    Optional Codex UI metadata
-  workflows/            Six modes and reference translation
-  references/           Focused design and technical knowledge
-  taste/                Contextual, overridable judgment defaults
-  knowledge/            Schemas, source register and comparisons
-  checklists/           Small checks for the relevant review stage
-  scripts/              Validation, knowledge, evaluation and packaging tools
-  tests/                30 scenarios, raw fixtures, Python tests and rubric
-  examples/             Seven synthetic worked workflows
+  SKILL.md              Entry point and core instructions
+  agents/               Agent metadata
+  workflows/            Different ways to approach a task
+  references/           Design and technical guidance
+  taste/                Editable design preferences
+  knowledge/            Sources, schemas, and examples
+  checklists/           Practical review checks
+  scripts/              Validation and packaging tools
+  tests/                Scenarios and evaluation rubric
+  examples/             Worked examples
 ```
 
-## Requirements and validation
+The skill itself doesn't need a server, API key, or paid service. A compatible coding agent needs to be able to read its files. Optional maintenance and evaluation scripts use **Python 3.10+** and the standard library.
 
-The skill itself requires only a compatible agent that can read its supporting files. Python **3.10+**, standard library only, runs the optional tooling. No paid service, provider API, runtime server or third-party Python package is required. Browser tools and project-specific tests are optional host capabilities; missing evidence must be disclosed.
+To run the checks yourself, go into the `creative-director/` folder:
 
-Run from the installable folder:
-
-```sh
+```bash
 python scripts/validate_skill.py
 python scripts/check_references.py
 python -m unittest discover -s tests -p "test_*.py" -v
@@ -110,16 +127,22 @@ python scripts/prepare_evaluation.py ../evaluation-runs/run-001 --scenario landi
 python scripts/package_release.py ../dist/creative-director-1.0.0.zip
 ```
 
-Optional `python scripts/check_references.py --online` performs bounded network checks and exits nonzero on unresolved links. It does not establish semantic accuracy or update review dates. Frontmatter uses JSON object syntax, a valid YAML 1.2 subset, so deterministic parsing needs no YAML dependency. Other YAML styles require adapting the validator. JSON Schemas use a documented limited subset enforced by `scripts/common.py`; unknown schema keywords fail loudly. Any standard draft-2020-12 validator can also validate the schemas, with application-level consent and file checks handled by the CLI.
+You can also run `python scripts/check_references.py --online` to check the recorded links. These checks help catch structural and packaging problems; they don't prove that the advice is good or that a resulting interface is accessible or performant. The [evaluation rubric](creative-director/tests/evaluation-rubric.md) explains how to compare results more systematically.
 
-See [the evaluation rubric](tests/evaluation-rubric.md) for controlled baseline-versus-skill runs, human scoring and honest result records. Fixtures contain deliberate defects. The suite is not a certification of frontend quality.
+For maintainers: the frontmatter uses JSON-style YAML so the validator doesn't need an external YAML package. The bundled schema tooling supports a documented subset of JSON Schema; see the scripts for details.
 
-## Limits and release status
+## What it won't do
 
-Creative judgment remains contextual. The skill cannot certify accessibility, predict market demand or prove originality. Automated validation checks structure, records and packaging; it cannot demonstrate improved taste. Source availability and APIs change. Browser inspection, actual performance and cross-agent behavior must be verified in the environment where the skill is used.
+Creative Director isn't a substitute for testing, user research, accessibility audits, or your own judgment. It can't guarantee originality or tell you whether an idea will succeed. It also isn't meant to handle unrelated backend debugging or general factual questions.
 
-Version **1.0.0** is prepared locally. Review [release readiness](checklists/release-readiness.md), commit the reviewed source, complete host evaluations, resolve or retain transparent source limitations, and approve publication before creating a public release. Nothing in the tooling publishes to GitHub or a directory.
+Some reference material is version-dependent, including the partially reviewed Three.js documentation. Check APIs against the version your project uses. Public examples are written illustrations, not anonymized private projects, and no private project files are included in the release package.
 
-## Contributing and license
+**Release status:** Version 1.0.0 has been prepared locally, but the public release and paired host evaluations are not yet confirmed. See the [release checklist](creative-director/checklists/release-readiness.md) for what's left.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Prefer a small evidence-supported correction with a regression scenario over more generic instructions. Do not contribute proprietary examples or third-party assets without permission. Released under the [MIT license](LICENSE).
+## Contributing
+
+If you find a case where the skill gives poor advice, misses something obvious, or makes a project worse, I'd be interested in a reproducible example and a suggested improvement. Focused changes are more useful than adding another page of generic instructions.
+
+See [CONTRIBUTING.md](creative-director/CONTRIBUTING.md). Please only contribute examples and assets you have permission to share.
+
+Released under the [MIT license](creative-director/LICENSE).
