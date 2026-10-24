@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creative Director"
+  short_description: "Creative judgment for distinctive digital products"
+  default_prompt: "Use $creative-director to improve this experience while preserving its identity and working behavior."

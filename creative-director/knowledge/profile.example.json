@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "preferences": [
+    {
+      "preference": "Dense editorial layouts with expressive type",
+      "context": "A culture magazine for experienced readers",
+      "reason": "Juxtaposition and visible breadth are part of discovery",
+      "exception": "Checkout and error recovery should remain direct",
+      "evidence": "explicit"
+    }
+  ],
+  "case_files": []
+}

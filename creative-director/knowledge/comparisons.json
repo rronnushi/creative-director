@@ -1,0 +1,53 @@
+[
+  {
+    "id": "synthetic-gallery-controls",
+    "task": "Make an artwork archive easier to browse",
+    "context": "A small public collection with five categories and square artworks",
+    "visual_references": [],
+    "option_a": "Place category selection in a dropdown with an Apply button",
+    "option_b": "Show compact category tabs with immediate results and a count",
+    "preferred": "B",
+    "rationale": "Five short categories fit visibly; immediate feedback reduces a redundant step while leaving artwork dominant",
+    "category": "interaction",
+    "principle": "Expose frequent low-cost choices when the set is small",
+    "exceptions": ["Large taxonomies or expensive remote queries may justify grouped selection and Apply"],
+    "confidence": "medium",
+    "review_status": "illustrative",
+    "provenance": "synthetic",
+    "publication_consent": false
+  },
+  {
+    "id": "synthetic-maximalist-identity",
+    "task": "Refine a maximalist festival page",
+    "context": "Expressive type and saturated colour are explicit project requirements",
+    "visual_references": [],
+    "option_a": "Replace expressive type with neutral text and remove all colour",
+    "option_b": "Retain the identity while clarifying ticket hierarchy and keyboard focus",
+    "preferred": "B",
+    "rationale": "Improves task completion while preserving the requested personality",
+    "category": "identity",
+    "principle": "Refinement should resolve weaknesses within the chosen direction",
+    "exceptions": ["An explicitly commissioned rebrand can change the direction"],
+    "confidence": "high",
+    "review_status": "illustrative",
+    "provenance": "synthetic",
+    "publication_consent": false
+  },
+  {
+    "id": "synthetic-generative-variety",
+    "task": "Improve variety in a seeded poster generator",
+    "context": "Every seed currently uses the same grid and a random hue",
+    "visual_references": [],
+    "option_a": "Add more random hue and opacity sliders",
+    "option_b": "Introduce two authored subdivision grammars with constrained palette roles",
+    "preferred": "B",
+    "rationale": "Changes composition and rhythm while preserving reproducibility",
+    "category": "creative-coding",
+    "principle": "Review structural variety separately from parameter diversity",
+    "exceptions": ["A controlled colour-science experiment may intentionally fix composition"],
+    "confidence": "medium",
+    "review_status": "illustrative",
+    "provenance": "synthetic",
+    "publication_consent": false
+  }
+]

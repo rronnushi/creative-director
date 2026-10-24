@@ -1,0 +1,580 @@
+[
+  {
+    "id": "new-website",
+    "input": "Give a regional museum a distinctive website direction; no code yet.",
+    "activation": true,
+    "mode": "DIRECT",
+    "references": [
+      "references/creative-direction.md",
+      "references/product-thinking.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Output contains concept, visual rules and tradeoffs; no source files change"
+    ],
+    "human_criteria": [
+      "Direction fits visitors planning a visit and preserves institutional credibility"
+    ],
+    "failure_conditions": [
+      "Generic adjective list; implementing despite no-code request"
+    ]
+  },
+  {
+    "id": "landing-critique",
+    "input": "Critique this landing page without editing it.",
+    "activation": true,
+    "mode": "CRITIQUE",
+    "references": [
+      "references/visual-design.md",
+      "references/ux-interaction.md"
+    ],
+    "fixture": "tests/fixtures/landing.html",
+    "objective_checks": [
+      "Identify the unlabeled email input from markup; mark rendered hierarchy pending unless actually viewed"
+    ],
+    "human_criteria": [
+      "Prioritize form completion over decorative changes"
+    ],
+    "failure_conditions": [
+      "Claiming browser inspection from source alone; changing files"
+    ]
+  },
+  {
+    "id": "react-refine",
+    "input": "Fix the cart total updating one click late; preserve this React app's styling.",
+    "activation": true,
+    "mode": "REFINE",
+    "references": [
+      "references/frontend-engineering.md"
+    ],
+    "fixture": "tests/fixtures/cart.jsx",
+    "objective_checks": [
+      "Use the current quantity to derive total; preserve the product and controls"
+    ],
+    "human_criteria": [
+      "Fix addresses state ownership without a framework rewrite"
+    ],
+    "failure_conditions": [
+      "Replacing app structure or styling"
+    ]
+  },
+  {
+    "id": "responsive-toolbar",
+    "input": "Fix narrow-screen overflow in the gallery toolbar.",
+    "activation": true,
+    "mode": "REFINE",
+    "references": [
+      "references/responsive-accessibility.md"
+    ],
+    "fixture": "tests/fixtures/landing.html",
+    "objective_checks": [
+      "Identify fixed width; make controls reflow; verify rendered 320px and 360px layouts if tools exist"
+    ],
+    "human_criteria": [
+      "Controls remain readable and artwork stays dominant"
+    ],
+    "failure_conditions": [
+      "Hiding the main action to remove overflow"
+    ]
+  },
+  {
+    "id": "reference-translate",
+    "input": "Translate the supplied SVG layout reference into a reusable specification; do not implement.",
+    "activation": true,
+    "mode": "DESIGN",
+    "references": [
+      "references/visual-design.md",
+      "references/typography-color.md"
+    ],
+    "fixture": "tests/fixtures/reference.svg",
+    "objective_checks": [
+      "Separate measurable SVG properties from inferred behavior; no invented hover or breakpoints"
+    ],
+    "human_criteria": [
+      "Explain layout relationships rather than copying a brand"
+    ],
+    "failure_conditions": [
+      "Treating a static reference as proof of responsive behavior"
+    ]
+  },
+  {
+    "id": "procedural-poster",
+    "input": "Build a seeded geometric poster prototype with PNG export.",
+    "activation": true,
+    "mode": "BUILD",
+    "references": [
+      "references/creative-coding.md",
+      "references/generative-art.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Scene state is reproducible and export uses that same state; inspect downloaded PNG if possible"
+    ],
+    "human_criteria": [
+      "Composition has hierarchy and intentional variation"
+    ],
+    "failure_conditions": [
+      "Unseeded calls during export; no meaningful variation"
+    ]
+  },
+  {
+    "id": "browser-game",
+    "input": "Design a touch-friendly tile puzzle with fair procedural levels.",
+    "activation": true,
+    "mode": "DESIGN",
+    "references": [
+      "references/game-design.md",
+      "references/responsive-accessibility.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Specify core loop, input alternatives, solvability and restart states"
+    ],
+    "human_criteria": [
+      "Difficulty comes from meaningful choices rather than poor controls"
+    ],
+    "failure_conditions": [
+      "Making targets smaller to increase difficulty"
+    ]
+  },
+  {
+    "id": "product-discovery",
+    "input": "Explore useful tools for people learning colour; give three distinct ideas.",
+    "activation": true,
+    "mode": "DISCOVER",
+    "references": [
+      "references/product-thinking.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Options differ in core loop; each includes a small validation experiment"
+    ],
+    "human_criteria": [
+      "Concepts offer different value mechanisms and feasible scope"
+    ],
+    "failure_conditions": [
+      "Three reskins of the same chat app"
+    ]
+  },
+  {
+    "id": "feature-simplify",
+    "input": "Our palette app has accounts, chat, favorites, exports and community feeds. What should the MVP retain?",
+    "activation": true,
+    "mode": "DISCOVER",
+    "references": [
+      "references/product-thinking.md",
+      "references/ai-experiences.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Define main job, must/next/omit and disconfirmation condition"
+    ],
+    "human_criteria": [
+      "Keep a complete valuable loop while reducing complexity"
+    ],
+    "failure_conditions": [
+      "Deleting export without asking how users use palettes"
+    ]
+  },
+  {
+    "id": "token-consistency",
+    "input": "Unify inconsistent button styles using existing tokens only.",
+    "activation": true,
+    "mode": "REFINE",
+    "references": [
+      "references/visual-design.md",
+      "references/frontend-engineering.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Inspect existing tokens and variants; change only inconsistent usages"
+    ],
+    "human_criteria": [
+      "Retain intentional semantic variants"
+    ],
+    "failure_conditions": [
+      "Creating another token system"
+    ]
+  },
+  {
+    "id": "accessibility-form",
+    "input": "Improve keyboard use and accessible labels in this form.",
+    "activation": true,
+    "mode": "REFINE",
+    "references": [
+      "references/responsive-accessibility.md",
+      "references/ux-interaction.md"
+    ],
+    "fixture": "tests/fixtures/landing.html",
+    "objective_checks": [
+      "Give email input an associated visible label; verify tab/focus behavior"
+    ],
+    "human_criteria": [
+      "Errors and recovery remain understandable"
+    ],
+    "failure_conditions": [
+      "Claiming complete accessibility from a static scan"
+    ]
+  },
+  {
+    "id": "animation-performance",
+    "input": "Review our animated background's jank; don't modify code yet.",
+    "activation": true,
+    "mode": "CRITIQUE",
+    "references": [
+      "references/motion-animation.md",
+      "references/frontend-engineering.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Request or inspect traces; separate measured bottlenecks from hypotheses"
+    ],
+    "human_criteria": [
+      "Keep useful ambience if affordable; prioritize input"
+    ],
+    "failure_conditions": [
+      "Inventing FPS or deleting animation purely by taste"
+    ]
+  },
+  {
+    "id": "preserve-identity",
+    "input": "Keep this maximalist festival identity and make ticket selection clearer.",
+    "activation": true,
+    "mode": "REFINE",
+    "references": [
+      "references/creative-direction.md",
+      "references/ux-interaction.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Preserve saturated palette and expressive type; improve ticket flow only"
+    ],
+    "human_criteria": [
+      "Solution works within the requested visual language"
+    ],
+    "failure_conditions": [
+      "Imposing monochrome minimalism"
+    ]
+  },
+  {
+    "id": "dashboard-coherence",
+    "input": "Critique a dashboard with random chart colours and uneven metric alignment.",
+    "activation": true,
+    "mode": "CRITIQUE",
+    "references": [
+      "references/visual-design.md",
+      "references/typography-color.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Report evidence limitations if dashboard artifacts aren't available; request relevant artifacts"
+    ],
+    "human_criteria": [
+      "Distinguish categorical colour from semantic status and decorative variation"
+    ],
+    "failure_conditions": [
+      "Inventing screenshot details"
+    ]
+  },
+  {
+    "id": "unfinished-app",
+    "input": "Review our unfinished interactive map; identify the next three changes.",
+    "activation": true,
+    "mode": "CRITIQUE",
+    "references": [
+      "references/ux-interaction.md",
+      "references/frontend-engineering.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Prioritize core navigation, loading/error and usable controls based on available evidence"
+    ],
+    "human_criteria": [
+      "Avoid polishing peripheral elements before the map task works"
+    ],
+    "failure_conditions": [
+      "Repository-wide audit or invented runtime results"
+    ]
+  },
+  {
+    "id": "dark-theme",
+    "input": "Specify an accessible dark theme for an existing editorial app.",
+    "activation": true,
+    "mode": "DESIGN",
+    "references": [
+      "references/typography-color.md",
+      "references/responsive-accessibility.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Map surface/ink/accent/status tokens and test real contrast pairs"
+    ],
+    "human_criteria": [
+      "Theme preserves editorial hierarchy and identity"
+    ],
+    "failure_conditions": [
+      "Uniformly inverting colours and assuming compliance"
+    ]
+  },
+  {
+    "id": "motion-direction",
+    "input": "Give this science visualization purposeful motion rules, including reduced motion.",
+    "activation": true,
+    "mode": "DIRECT",
+    "references": [
+      "references/motion-animation.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Define information carried by motion and static equivalents"
+    ],
+    "human_criteria": [
+      "Motion helps orientation without overwhelming the data"
+    ],
+    "failure_conditions": [
+      "Blanket ban on all animation"
+    ]
+  },
+  {
+    "id": "ai-palette",
+    "input": "Should our palette generator use AI for contrast and mood interpretation?",
+    "activation": true,
+    "mode": "DISCOVER",
+    "references": [
+      "references/ai-experiences.md",
+      "references/typography-color.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Compute contrast deterministically; compare optional semantic AI against cost and recovery"
+    ],
+    "human_criteria": [
+      "AI adds clear user value where interpretation matters"
+    ],
+    "failure_conditions": [
+      "Model guesses contrast ratios; paid dependency required"
+    ]
+  },
+  {
+    "id": "dense-table",
+    "input": "Improve this expert table's readability without reducing information density.",
+    "activation": true,
+    "mode": "REFINE",
+    "references": [
+      "references/visual-design.md",
+      "references/ux-interaction.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Preserve fields and table interactions; align and group content"
+    ],
+    "human_criteria": [
+      "Density remains appropriate for expert comparison"
+    ],
+    "failure_conditions": [
+      "Replacing the table with oversized cards"
+    ]
+  },
+  {
+    "id": "svg-export",
+    "input": "Fix exported SVG differing from the selected seeded preview.",
+    "activation": true,
+    "mode": "REFINE",
+    "references": [
+      "references/creative-coding.md",
+      "references/generative-art.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Trace shared state/seed through preview and export; verify matching geometry"
+    ],
+    "human_criteria": [
+      "Avoid unrelated UI redesign"
+    ],
+    "failure_conditions": [
+      "New randomness in export or engine rewrite"
+    ]
+  },
+  {
+    "id": "variety-review",
+    "input": "Evaluate these 24 seeded compositions for meaningful variety.",
+    "activation": true,
+    "mode": "CRITIQUE",
+    "references": [
+      "references/generative-art.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "If artifacts unavailable report limitation; define a fixed seed contact-sheet review"
+    ],
+    "human_criteria": [
+      "Distinguish silhouette/structure variety from colour-only variation"
+    ],
+    "failure_conditions": [
+      "Claiming beauty from unique-seed count"
+    ]
+  },
+  {
+    "id": "three-responsive",
+    "input": "Fix a Three.js scene stretching on resize using the existing package version.",
+    "activation": true,
+    "mode": "REFINE",
+    "references": [
+      "references/creative-coding.md",
+      "references/frontend-engineering.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Inspect installed version; verify drawing buffer, camera aspect and projection updates"
+    ],
+    "human_criteria": [
+      "Keep rendering stable across aspect ratios"
+    ],
+    "failure_conditions": [
+      "Treating unavailable manual content as verified API evidence"
+    ]
+  },
+  {
+    "id": "empty-error",
+    "input": "Specify empty, no-results, loading and failed-fetch states for a gallery.",
+    "activation": true,
+    "mode": "DESIGN",
+    "references": [
+      "references/ux-interaction.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Differentiate data absence, filter mismatch and network failure; preserve filters on retry"
+    ],
+    "human_criteria": [
+      "States offer a clear appropriate next action"
+    ],
+    "failure_conditions": [
+      "Using one blank screen for every state"
+    ]
+  },
+  {
+    "id": "private-override",
+    "input": "Use my private profile's dense brutalist direction for a public tool.",
+    "activation": true,
+    "mode": "DIRECT",
+    "references": [
+      "references/creative-direction.md",
+      "references/visual-design.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Read authorized profile; keep private evidence out of public output and retain quality checks"
+    ],
+    "human_criteria": [
+      "Public defaults yield to explicit direction"
+    ],
+    "failure_conditions": [
+      "Publishing private case material or silently imposing default taste"
+    ]
+  },
+  {
+    "id": "feedback-regression",
+    "input": "A reviewer rejected your minimal redesign of an expressive app. Capture a candidate lesson.",
+    "activation": true,
+    "mode": "REFINE",
+    "references": [
+      "references/creative-direction.md"
+    ],
+    "fixture": "",
+    "objective_checks": [
+      "Record rejection as private feedback; no canonical promotion without matching human approval"
+    ],
+    "human_criteria": [
+      "Lesson is contextual rather than a universal rule"
+    ],
+    "failure_conditions": [
+      "Automatically rewriting the skill from one review"
+    ]
+  },
+  {
+    "id": "backend-negative",
+    "input": "Debug a PostgreSQL connection pool timeout; no UX changes.",
+    "activation": false,
+    "mode": "NONE",
+    "references": [],
+    "fixture": "",
+    "objective_checks": [
+      "Do not activate Creative Director; answer engineering task directly"
+    ],
+    "human_criteria": [
+      "Avoid forcing design critique into backend work"
+    ],
+    "failure_conditions": [
+      "Loading all creative references"
+    ]
+  },
+  {
+    "id": "fact-negative",
+    "input": "What is the boiling point of water at standard atmospheric pressure?",
+    "activation": false,
+    "mode": "NONE",
+    "references": [],
+    "fixture": "",
+    "objective_checks": [
+      "Do not activate; answer factual question"
+    ],
+    "human_criteria": [
+      "Keep answer proportionate"
+    ],
+    "failure_conditions": [
+      "Inventing a creative-direction workflow"
+    ]
+  },
+  {
+    "id": "text-negative",
+    "input": "Correct the spelling in: Recieve the package tomorow.",
+    "activation": false,
+    "mode": "NONE",
+    "references": [],
+    "fixture": "",
+    "objective_checks": [
+      "Return corrected text without creative workflow"
+    ],
+    "human_criteria": [
+      "Do not expand task"
+    ],
+    "failure_conditions": [
+      "Generating product ideas"
+    ]
+  },
+  {
+    "id": "shell-negative",
+    "input": "Show a command that lists files in this folder.",
+    "activation": false,
+    "mode": "NONE",
+    "references": [],
+    "fixture": "",
+    "objective_checks": [
+      "Do not activate; provide suitable command"
+    ],
+    "human_criteria": [
+      "Avoid unnecessary project inspection"
+    ],
+    "failure_conditions": [
+      "Design audit"
+    ]
+  },
+  {
+    "id": "unit-negative",
+    "input": "Convert 24 inches to centimetres.",
+    "activation": false,
+    "mode": "NONE",
+    "references": [],
+    "fixture": "",
+    "objective_checks": [
+      "Do not activate; compute 60.96 cm"
+    ],
+    "human_criteria": [
+      "Answer directly"
+    ],
+    "failure_conditions": [
+      "Loading the skill for unrelated arithmetic"
+    ]
+  }
+]

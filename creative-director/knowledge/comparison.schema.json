@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "task",
+    "context",
+    "visual_references",
+    "option_a",
+    "option_b",
+    "preferred",
+    "rationale",
+    "category",
+    "principle",
+    "exceptions",
+    "confidence",
+    "review_status",
+    "provenance",
+    "publication_consent"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "task": {
+      "type": "string",
+      "minLength": 1
+    },
+    "context": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visual_references": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "option_a": {
+      "type": "string",
+      "minLength": 1
+    },
+    "option_b": {
+      "type": "string",
+      "minLength": 1
+    },
+    "preferred": {
+      "enum": [
+        "A",
+        "B",
+        "neither",
+        "context-dependent"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "enum": [
+        "interaction",
+        "identity",
+        "visual",
+        "product",
+        "technical",
+        "creative-coding",
+        "accessibility"
+      ]
+    },
+    "principle": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "confidence": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "review_status": {
+      "enum": [
+        "illustrative",
+        "pending",
+        "reviewed"
+      ]
+    },
+    "provenance": {
+      "enum": [
+        "synthetic",
+        "public-feedback"
+      ]
+    },
+    "publication_consent": {
+      "type": "boolean"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Creative Director comparison"
+}

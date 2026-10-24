@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "kind",
+    "context",
+    "recommendation",
+    "outcome",
+    "evidence",
+    "proposed_principle",
+    "exceptions",
+    "confidence",
+    "regression_scenario"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "kind": {
+      "enum": [
+        "approved-recommendation",
+        "rejected-recommendation",
+        "corrected-implementation",
+        "repeated-failure",
+        "successful-decision"
+      ]
+    },
+    "context": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recommendation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outcome": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "proposed_principle": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "confidence": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "regression_scenario": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Creative Director feedback"
+}

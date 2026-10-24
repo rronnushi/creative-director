@@ -1,0 +1,177 @@
+[
+  {
+    "id": "agent-skills",
+    "title": "Agent Skills specification",
+    "url": "https://agentskills.io/specification",
+    "version": "Living specification",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "living",
+    "claims": [
+      "Required name/description; name matches skill directory",
+      "Relative resources and progressive disclosure"
+    ],
+    "limitations": "Host discovery and tool permissions vary."
+  },
+  {
+    "id": "codex-skills",
+    "title": "Codex skill authoring and discovery",
+    "url": "https://learn.chatgpt.com/docs/build-skills",
+    "version": "Living documentation reviewed 2026-10-24",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "living",
+    "claims": [
+      "Project .agents/skills and user ~/.agents/skills discovery",
+      "Explicit invocation and selective instruction loading"
+    ],
+    "limitations": "No live Codex installation evaluation performed."
+  },
+  {
+    "id": "claude-skills",
+    "title": "Claude Code skills",
+    "url": "https://code.claude.com/docs/en/skills",
+    "version": "Living documentation reviewed 2026-10-24",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "living",
+    "claims": [
+      "Project .claude/skills and personal ~/.claude/skills",
+      "Explicit /skill-name invocation and automatic discovery"
+    ],
+    "limitations": "No live Claude Code evaluation; cloud and other Claude products have different discovery."
+  },
+  {
+    "id": "wcag",
+    "title": "Web Content Accessibility Guidelines 2.2",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "version": "W3C Recommendation 12 December 2024",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "stable",
+    "claims": [
+      "Text contrast criteria",
+      "Reflow, keyboard and target-size requirements with exceptions"
+    ],
+    "limitations": "Selected criteria inform guidance; this skill does not establish conformance."
+  },
+  {
+    "id": "colour",
+    "title": "CSS Color Module Level 4",
+    "url": "https://www.w3.org/TR/css-color-4/",
+    "version": "Candidate Recommendation Draft 22 October 2026",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "version-sensitive",
+    "claims": [
+      "OKLab and OKLCH colour representation",
+      "Colour interpolation and gamut mapping"
+    ],
+    "limitations": "Draft status and browser implementation require rechecking."
+  },
+  {
+    "id": "typography",
+    "title": "GOV.UK Design System type scale",
+    "url": "https://design-system.service.gov.uk/styles/type-scale/",
+    "version": "Living design system; no pinned package release",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "living",
+    "claims": [
+      "Consistent type scale and responsive typography roles"
+    ],
+    "limitations": "A contextual public-service example, not a universal aesthetic."
+  },
+  {
+    "id": "canvas",
+    "title": "MDN Canvas API",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API",
+    "version": "Living web documentation; no pinned release",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "living",
+    "claims": [
+      "Canvas draws graphics through JavaScript",
+      "Canvas supports animation and game graphics"
+    ],
+    "limitations": "Engine-specific seeded grammars and visual judgments are authored guidance."
+  },
+  {
+    "id": "svg",
+    "title": "MDN SVG documentation",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/SVG",
+    "version": "Living web documentation; no pinned release",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "living",
+    "claims": [
+      "SVG is a vector graphics format for the web"
+    ],
+    "limitations": "Verify specific export and accessibility behavior in target browsers."
+  },
+  {
+    "id": "three",
+    "title": "Three.js responsive rendering manual",
+    "url": "https://threejs.org/manual/#en/responsive",
+    "version": "Unpinned; project release must be checked",
+    "reviewed_on": "2026-10-24",
+    "status": "partial",
+    "sensitivity": "version-sensitive",
+    "claims": [],
+    "limitations": "Manual shell retrieved but responsive content unavailable; old /manual/en/responsive.html returned 404. Rendering API advice requires installed-version verification."
+  },
+  {
+    "id": "animation",
+    "title": "web.dev animation performance guide",
+    "url": "https://web.dev/articles/animations-guide",
+    "version": "Living guide; no pinned browser release",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "living",
+    "claims": [
+      "Prefer transform and opacity for ordinary movement",
+      "Use profiling to investigate expensive rendering"
+    ],
+    "limitations": "Specific performance depends on scene and hardware."
+  },
+  {
+    "id": "games",
+    "title": "MDN Anatomy of a video game",
+    "url": "https://developer.mozilla.org/en-US/docs/Games/Anatomy",
+    "version": "Living web documentation; no pinned release",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "living",
+    "claims": [
+      "Browser animation loops and requestAnimationFrame",
+      "Separating loop work and elapsed-time concerns"
+    ],
+    "limitations": "Fairness, progression and fun need playtesting."
+  },
+  {
+    "id": "discovery",
+    "title": "GOV.UK discovery phase",
+    "url": "https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works",
+    "version": "Living service manual",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "living",
+    "claims": [
+      "Understand users, problem and constraints before committing to build"
+    ],
+    "limitations": "MVP prioritization framework here is authored synthesis, not validated market research."
+  },
+  {
+    "id": "evals",
+    "title": "OpenAI working with evaluations",
+    "url": "https://developers.openai.com/api/docs/guides/evals",
+    "version": "Living API documentation; no pinned SDK release",
+    "reviewed_on": "2026-10-24",
+    "status": "reviewed",
+    "sensitivity": "version-sensitive",
+    "claims": [
+      "Define test data and criteria before evaluating outputs"
+    ],
+    "limitations": "Used for general evaluation principles only; skill requires no OpenAI API or paid service."
+  }
+]
