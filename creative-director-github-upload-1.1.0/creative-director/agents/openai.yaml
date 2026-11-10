@@ -1,4 +1,0 @@
-interface:
-  display_name: "Creative Director"
-  short_description: "Better ideas, clearer interfaces, thoughtful changes"
-  default_prompt: "Use $creative-director to review this project and help me decide what to improve."
