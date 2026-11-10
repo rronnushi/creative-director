@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "input",
+    "activation",
+    "mode",
+    "references",
+    "fixture",
+    "objective_checks",
+    "human_criteria",
+    "failure_conditions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "input": {
+      "type": "string",
+      "minLength": 1
+    },
+    "activation": {
+      "type": "boolean"
+    },
+    "mode": {
+      "enum": [
+        "DIRECT",
+        "CRITIQUE",
+        "REFINE",
+        "DISCOVER",
+        "DESIGN",
+        "BUILD",
+        "NONE"
+      ]
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "fixture": {
+      "type": "string"
+    },
+    "objective_checks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "human_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "failure_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Creative Director scenario"
+}

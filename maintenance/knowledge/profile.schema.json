@@ -1,0 +1,61 @@
+{
+  "type": "object",
+  "required": [
+    "version",
+    "preferences",
+    "case_files"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "preferences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "preference",
+          "context",
+          "reason",
+          "exception",
+          "evidence"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "preference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "context": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exception": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "enum": [
+              "explicit",
+              "inferred"
+            ]
+          }
+        }
+      }
+    },
+    "case_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Creative Director profile"
+}

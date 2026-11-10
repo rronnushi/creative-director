@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "decision",
+    "reviewer",
+    "reviewer_type",
+    "reviewed_on",
+    "rationale",
+    "regression_scenario"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "decision": {
+      "enum": [
+        "approved",
+        "rejected"
+      ]
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer_type": {
+      "const": "human"
+    },
+    "reviewed_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "regression_scenario": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Creative Director approval"
+}
